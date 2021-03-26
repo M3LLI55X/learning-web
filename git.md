@@ -7,8 +7,8 @@
 4.本地初始化仓库
 	1）进入一个本地文件夹，右击鼠标点击git bush here，进去git命令终端
 	2）第一次使用，首先配置账户信息
-		git config --global user.name "郝洪辉"
-		git config --global user.email "1024543289@qq.com"
+		git config --global user.name "M"
+		git config --global user.email "1@qq.com"
 	3）初始化仓库
 		git init
 		执行该命令后，本地文件夹会生成一个.git文件，有此文件的文件夹，即为Git本地仓库
