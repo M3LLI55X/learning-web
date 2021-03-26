@@ -1,0 +1,74 @@
+*html5：
+day01:
+1、软件安装
+    1) 编辑器
+        vscode
+    2) 浏览器
+        forefox,google chrome
+    3) 金山打字通
+2、笔记保存的目录
+    太原理工/html5/day
+3、html
+    1. 超文本标记语言
+    2. 超文本与普通文本的区别
+        普通文本    
+            纯字符
+        超文本
+            纯字符、音视频、图片、音乐
+    3. 浏览器是按照从上往下的顺序解析html文件
+    4. 语法错误时，浏览器不报错
+    5. 以.html和.htm作为后缀
+4、环境
+
+    服务器
+        阿里云
+    
+5、代码开发流程
+    1. 在vscode里面编写代码
+    2. 右击当前文件open in browser
+    3. 浏览器查看效果
+    4. 将本地代码上传到阿里云服务器
+    5. 通过公网ip访问部署的代码
+
+6、http协议
+    HTTP协议采用了请求/响应模型
+        请求
+            请求体、请求头、请求数据
+                请求数据    
+                    let obj = {name:'tom',age:23}
+                请求头
+                    content-type:'application/json'
+                    content-type:'application/x-www-form-urlencoded'
+        响应
+            响应体、响应头、响应内容
+                响应内容
+                    ajax res.data
+                    axios res.data.data
+    接口所需要的数据格式不同时
+        json字符串 "{'name':'tom','age':23}"
+        查询字符串 name=tom&age=23
+
+    url 统一资源定位符
+        协议://ip:port/path
+        http://47.93.255.92/hello.html
+
+7、html结构
+    1. 元素(标签)的构成
+        开始标签、内容、结束标签
+    2. 块级元素与行内元素
+        a.块级元素
+            示例：div、html、body、h1~h5、p...
+		1) 独占一行空间
+		2) 高度有内容决定、宽度占满窗口
+		3) 宽、高可以设置
+        b.行内元素
+            示例：span、i、bold...
+		1) 与其他元素共享一行空间
+		2) 宽高由内容决定
+		3) 宽高无法设置
+        注意事项：
+		1.块级元素可以嵌套其他元素
+		2.行内元素不可以嵌套块级元素
+
+
+

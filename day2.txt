@@ -1,0 +1,249 @@
+
+day02:
+	c.具体讲解各个块级和行级元素：
+		1.元素的组成
+		    外边距margin + 边框border + 内边距padding + 内容
+		2.块级元素  
+		    div
+		    h1~h5 标题
+			margin
+		    html
+		    ul li 无序列表
+			ul margin、padding-left
+			li 黑色圆点 list-style设置
+		    ol li 有序列表
+		    p 段落标签
+		3.行内元素  
+		    a 超链接
+			href    访问的地址
+			    url 访问地址
+			    id  锚点
+			target  设置超链接打开的方式
+			    _self 当前选项卡打开
+			    _blank 新建选项卡打开
+		    i、strong...
+		4.块级元素和行内元素的转换
+		    display:block;  将元素设置为块级元素
+		    display:inline-block; 将元素设置为行内块元素
+		5.如何给行内元素设置宽高？
+		    先将行内元素设置为块级元素或者行内块元素，再设置宽高即可		
+		块级元素例：
+		<!DOCTYPE html>
+		<html lang="en">
+		<head>
+		    <meta charset="UTF-8">
+		    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		    <title>块级元素</title>
+		</head>
+		<style>
+		    a {
+			display:block;
+		    }
+		    div {
+			display: inline-block;
+		    }
+		</style>
+		<body>
+		    <a href="">登录</a>
+		    <span>测试</span>
+		    <div>这是一个div</div>
+		</body>
+		</html>
+8、核心属性 【绝大多数标签都可以使用】
+        <div 属性名=属性值 属性名=属性值></div>
+        id      唯一标识
+        class   类名
+        title   提示语
+        style   样式
+9、特有属性 【某些标签才具备的属性】
+        a
+            href
+            target
+        img
+            src 加载图片的地址
+            alt 图片无法加载时显示的文字
+10、自定义属性
+        data-xxx='xxx'
+        <div data-test='hello'></div>
+
+	设置属性的实例：
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <title>Document</title>
+	</head>
+	<style>
+	    /* div {
+		color: red;
+	    } */
+	    /* ul li {
+	     list-style: none;
+	    } */
+	</style>
+	<body>
+	    <!-- 组件 -->
+	    <el-progress :percentage="50" status="exception">1</el-progress>
+	    <img src="" alt="图片无法加载.">
+	    <div id='one' class="one">hello</div>
+	    <h1 class='one' title='标题一的提示'>标题一</h1>
+	    <!-- <h1 class='one' :title='item.title'>标题一</h1> -->
+	    <ul style='color:#cccccc'>
+		<li>1</li>
+		<li>2</li>
+	    </ul>
+	    <ol>
+		<li>1</li>
+		<li>2</li>
+	    </ol>
+	    <div style='height:500px'></div>
+	    <p>这是一个段落</p>
+	    <a href="#one">Baidu</a>
+	    <!-- <script>
+		new Vue({
+		    methods:{
+			clickHandler(a){
+			    console.log(a)
+			}
+		    }
+		})
+	    </script> -->
+	</body>
+	</html>
+    
+11、表格
+    table
+        属性：border、cellpadding、cellspacing、bgcolor
+        caption 表格的标题
+        thead   表头
+            tr
+                th
+        tbody   表体
+            tr
+                td
+        
+    合并单元格（重点）
+        colspan 跨列数
+        rowspan 跨行数
+
+    表格实例：
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <title>表格</title>
+	</head>
+	<body>
+	    <!-- <div style='width:500px'></div> -->
+	    <table width='500' border='1' cellspacing='0' cellpadding='5'>
+		<!-- 表格标题 -->
+		<caption>第一个表格</caption>
+		<!-- 表头 -->
+		<thead>
+		    <tr>
+			<th bgcolor='#ccc'>编号</th>
+			<th>姓名</th>
+			<th>性别</th>
+			<th colspan='2'>操作</th>
+		    </tr>
+		</thead>
+		<!-- 表体 -->
+		<tbody>
+		    <!-- 文本水平居中 center/left/right -->
+		    <tr align="center">
+			<td>1</td>
+			<td>张三</td>
+			<td>男</td>
+			<td>删除</td>
+			<td>详情</td>
+		    </tr>
+		</tbody>
+		<!-- <tfoot>
+		    <tr>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+		    </tr>
+		</tfoot> -->
+	    </table>
+	</body>
+	</html>
+
+12、h5新增的语义化标签
+    header、aside、nav、article、section、footer、address
+
+13、表单
+    form
+    1.get和post的区别
+        get 会将请求的数据拼接在浏览器地址栏上，www:baidu.com?name=tom&age=13 不安全，请求数据的大小有限制
+        post 将请求数据放在请求体中，请求数据的大小一般没有限制，比较安全
+
+    2.表单的组件
+        a.input
+            重要属性：type
+			属性值：
+			text    单行文本框
+			submit  提交表单
+			radio   单选按钮
+			checkbox    复选按钮
+			reset   重置表单
+			password 密码框
+			file    文件的上传
+			    图片上传
+				文件服务器(图片、文件)
+			image   图片按钮
+
+        b.select
+            重要属性：option
+        c.textarea
+        d.button
+        e.label
+
+    3.表单提交的过程
+            用户点击新增按钮 --> 弹出模态框(表单) --> 输入信息 --> 用户点击确认提交按钮 --> 
+	    将数据发送给后台 --> 关闭模态款 --> 调用重置按钮，清空表单内容 --> 下一次点击显示模态框的时候内容为空
+    
+    表单的实例：
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <title>表单</title>
+	</head>
+	<body>
+	    <form>
+		<!-- 单行文本框 -->
+		<label for="username">用户名：</label><input type="text" id="username" disabled>
+		<label for="password">密码：</label><input type="password" id="password">
+		<br>
+		性别：
+		<label for="male">男</label><input type="radio" id="male" name="gender" value="male">
+		<label for="female">女</label><input type="radio" id="female" name="gender" value='female'>
+		<br>
+		爱好：
+		<label for="basketball">篮球</label><input type="checkbox" id="basketball" checked>
+		<br>
+		出生地：
+		<select multiple>
+		    <optgroup label="省">
+			<option value="2">江苏</option>
+			<option value="3">山西</option>
+		    </optgroup>
+		</select>
+		<select>
+		    <optgroup label="市">
+			<option value="1">合肥</option>
+			<option value="2">苏州</option>
+			<option value="3">太原</option>
+		    </optgroup>
+		</select>
+		<br>
+		<input type="reset" value='重置'>
+		<br>
+		<textarea name="" id="" cols="30" rows="10"></textarea>
+	    </form>
+	</body>
+	</html>
